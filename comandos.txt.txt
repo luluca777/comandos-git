@@ -1,19 +1,110 @@
-git init: Inicializa um repositório Git em um diretório local, criando um novo repositório vazio ou reinicializando um existente.
-
-git clone [URL]: Clona um repositório Git existente para o seu diretório local.
-
-git add [arquivo]: Adiciona um arquivo ao índice (staging area) para ser incluído no próximo commit.
-
-git commit -m "[mensagem]": Grava as mudanças feitas no índice no repositório. A mensagem descreve as alterações feitas no commit.
-
-git status: Exibe o estado atual do diretório de trabalho e do índice.
-
+git init: Inicializa um novo repositório Git localmente.
+git clone [URL]: Clona um repositório Git remoto para o seu computador.
+git add [arquivo]: Adiciona alterações de arquivos ao índice (staging area) para prepará-las para o commit.
+git commit -m "[mensagem]": Registra as alterações adicionadas ao índice com uma mensagem de commit.
+git status: Exibe o estado atual do seu repositório, incluindo quais arquivos foram modificados, adicionados ou removidos.
 git push: Envia commits locais para o repositório remoto.
-
-git pull: Obtém e integra as mudanças do repositório remoto para o repositório local.
-
+git pull: Obtém e mescla as alterações do repositório remoto para o repositório local.
 git branch: Lista todas as branches no repositório local.
-
 git checkout [branch]: Muda para uma branch específica.
-
 git merge [branch]: Mescla as alterações de uma branch para a branch atual.
+git fetch: Obtém todas as branches remotas do repositório remoto.
+git remote -v: Lista os repositórios remotos configurados.
+git log: Exibe o histórico de commits.
+git diff: Mostra as diferenças entre arquivos.
+git reset [arquivo]: Remove um arquivo do índice (staging area), mantendo as alterações no diretório de trabalho.
+git stash: Armazena temporariamente alterações não finalizadas.
+git tag [nome]: Cria uma tag para um commit específico.
+git blame [arquivo]: Mostra quem modificou cada linha de um arquivo e quando.
+git rebase [branch]: Reaplica commits de uma branch na branch atual.
+git cherry-pick [commit]: Aplica um commit específico na branch atual.
+git bisect: Ajuda a encontrar um commit específico que introduziu um bug.
+git submodule: Gerencia submódulos dentro de um repositório.
+git reflog: Mostra o histórico de referências, útil para recuperar commits perdidos.
+git remote add [nome] [URL]: Adiciona um novo repositório remoto.
+git remote rm [nome]: Remove um repositório remoto.
+git remote rename [nome_antigo] [nome_novo]: Renomeia um repositório remoto.
+git config --global user.name "[nome]": Configura o nome do usuário para commits.
+git config --global user.email "[email]": Configura o email do usuário para commits.
+git fetch --prune: Remove referências locais de branches deletadas remotamente.
+git rm [arquivo]: Remove um arquivo do repositório.
+git mv [arquivo_antigo] [arquivo_novo]: Renomeia ou move um arquivo no repositório.
+git clean -n: Mostra quais arquivos seriam removidos pelo git clean -f.
+git clean -f: Remove arquivos não rastreados.
+git revert [commit]: Desfaz um commit específico, criando um novo commit.
+git checkout -- [arquivo]: Descarta as mudanças não salvas em um arquivo.
+git describe [commit]: Fornece uma descrição legível do commit mais próximo.
+git grep [termo]: Pesquisa por um termo em arquivos do repositório.
+git show [commit]: Exibe informações e mudanças introduzidas por um commit.
+git config --global alias.[nome] "[comando]": Cria um alias para um comando Git.
+git update-index --assume-unchanged [arquivo]: Ignora as mudanças em um arquivo.
+git update-index --no-assume-unchanged [arquivo]: Deixa de ignorar as mudanças em um arquivo.
+git shortlog: Resumo do histórico de commits com contagem de commits por autor.
+git log --graph: Exibe o histórico de commits como um gráfico.
+git log --author="[autor]": Filtra o histórico de commits por autor.
+git log --grep="[termo]": Filtra o histórico de commits por mensagem de commit.
+git log --since="[data]": Mostra commits desde uma determinada data.
+git log --until="[data]": Mostra commits até uma determinada data.
+git log --oneline: Exibe cada commit em uma única linha.
+git log --decorate: Exibe informações adicionais como tags e branches em cada commit.
+git log --stat: Exibe estatísticas resumidas de modificação para cada commit.
+git add .: Adiciona todas as alterações no diretório atual ao índice.
+git commit --amend: Adiciona alterações ao último commit.
+git commit --amend -m "[nova_mensagem]": Altera a mensagem do último commit.
+git push -u [remote] [branch]: Define uma upstream branch para a branch atual e faz push para o repositório remoto.
+git branch -d [branch]: Exclui uma branch localmente.
+git branch -D [branch]: Força a exclusão de uma branch, mesmo que haja commits não mesclados.
+git push origin --delete [branch]: Exclui uma branch remota.
+git branch -m [nome_antigo] [nome_novo]: Renomeia uma branch localmente.
+git push [remote] :[branch]: Remove uma branch remota.
+git revert HEAD: Desfaz o último commit, criando um novo commit.
+git revert HEAD~n: Desfaz os últimos n commits, criando novos commits.
+git reset --hard: Reseta o diretório de trabalho e o índice para o estado do último commit.
+git reset --hard [commit]: Reseta o diretório de trabalho e o índice para um commit específico.
+git reset --soft [commit]: Desfaz commits, mantendo as alterações no diretório de trabalho.
+git cherry-pick --continue: Continua o processo de cherry-pick após resolver conflitos.
+git cherry-pick --abort: Abandona o processo de cherry-pick em caso de conflitos.
+git checkout -b [nova_branch]: Cria uma nova branch e muda para ela.
+git checkout -b [nova_branch] [commit]: Cria uma nova branch a partir de um commit específico.
+git checkout -t [remote]/[branch]: Cria e muda para uma nova branch localmente, rastreando uma branch remota.
+git rebase --continue: Continua o processo de rebase após resolver conflitos.
+git rebase --skip: Pula um commit durante o processo de rebase.
+git rebase --abort: Abandona o processo de rebase e retorna ao estado anterior.
+git bisect start: Inicia o processo de bisect para encontrar um commit problemático.
+git bisect good [commit]: Marca um commit como bom durante o processo de bisect.
+git bisect bad [commit]: Marca um commit como ruim durante o processo de bisect.
+git bisect reset: Finaliza o processo de bisect e retorna ao estado original.
+git submodule init: Inicializa submódulos após clonar um repositório.
+git submodule update: Atualiza submódulos para as versões configuradas no repositório pai.
+git submodule update --init --recursive: Inicializa e atualiza submódulos recursivamente.
+git reflog show [referência]: Exibe o histórico de uma referência específica no reflog.
+git reflog expire --expire=[tempo]: Remove entradas antigas do reflog.
+git reflog delete [referência]: Remove todas as entradas relacionadas a uma referência específica do reflog.
+git remote set-url [remote] [URL]: Altera a URL de um repositório remoto.
+git remote prune [remote]: Remove referências locais de branches deletadas no repositório remoto.
+git remote update: Atualiza a lista de branches e tags de todos os repositórios remotos.
+git clean -fd: Remove arquivos não rastreados e diretórios vazios de forma recursiva.
+git clean -fX: Remove somente arquivos não rastreados, ignorando aqueles definidos no gitignore.
+git clean -fx: Remove todos os arquivos não rastreados, ignorando aqueles definidos no gitignore.
+git clean -n -d: Mostra quais diretórios vazios seriam removidos pelo git clean -fd.
+git clean -n -X: Mostra quais arquivos não rastreados seriam removidos pelo git clean -fX.
+git clean -n -x: Mostra quais arquivos não rastreados seriam removidos pelo git clean -fx.
+git rev-parse [nome_ref]: Converte uma referência para o seu hash SHA-1 correspondente.
+git rev-list [commit1]..[commit2]: Lista todos os commits entre dois commits.
+git rev-list --count [commit1]..[commit2]: Conta o número de commits entre dois commits.
+git rev-list --reverse [commit1]..[commit2]: Lista todos os commits entre dois commits na ordem inversa.
+git rev-list --format=%B [commit]: Exibe apenas as mensagens de commit de uma sequência de commits.
+git rev-list --objects [commit]: Exibe todos os objetos referenciados por um commit.
+git rev-list --all: Lista todos os commits em todas as branches.
+git rev-list --max-count=[n]: Limita o número de commits exibidos.
+git rev-list --since="[data]": Lista todos os commits desde uma determinada data.
+git rev-list --until="[data]": Lista todos os commits até uma determinada data.
+git reflog expire --expire-unreachable=[tempo]: Remove entradas de commits inalcançáveis no reflog.
+git reflog delete --expire-unreachable: Remove todas as entradas de commits inalcançáveis do reflog.
+git reflog show --all: Exibe o reflog de todas as referências.
+git reflog show --expire=now: Remove todas as entradas do reflog.
+git update-ref refs/heads/[branch] [commit]: Atualiza a referência de uma branch para um commit específico.
+git update-ref -d [referência]: Remove uma referência do repositório.
+git cat-file -t [objeto]: Exibe o tipo de um objeto Git.
+git cat-file -s [objeto]: Exibe o tamanho de um objeto Git em bytes.
+git cat-file -p [objeto]: Exibe o conteúdo de um objeto Git.
